@@ -1,0 +1,54 @@
+header {
+    background-color: whitesmoke;
+    height: 100px;
+    width: 900px;
+}
+Header h1{
+    padding-right: 250px;
+    font-size: 50px;
+    float: right;
+    clear: right;
+}
+header img{
+    height: 100px;
+}
+body {
+    height: 1000px;
+    width: 1000px;
+}
+main {
+    height: 800px;
+    width: 800px;
+    border: solid darkslategrey 50px;
+    font-size: 19px;
+    font-family: Times New Roman , Times;
+}
+main form{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+form h3 {
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+}
+form img{
+    height: 60px;
+    width: 60px;
+}
+#bio{
+    width: 700px;
+    height: 50px;
+    margin-left: 8px;
+}
+.Opt_left{
+    width: 380px;
+    float: right;
+
+}
+.Opt_right{
+    width: 380px;
+    clear: top;
+}
+#email{
+    padding-left: 10px;
+}

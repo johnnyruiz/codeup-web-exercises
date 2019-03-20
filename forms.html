@@ -14,16 +14,34 @@
         <form action="https://www.elformo.com/forms/9088a98a-52ec-4d1e-b24b-66beb1370583" method="post" accept-charset="UTF-8">
             <div>
                 <h3>1. User Information.</h3>
+                <label for="birthdate">
+                    Birthdate:
+                <input type="date" name="birthdate" id="birthdate" placeholder="Please enter your DOB">
+                </label>
+                <label for="telephone">
+                    Phone Number:
+                <input type="tel" name="telephone" id="telephone" placeholder="Phone number">
+                </label>
+                <label for="typePhone">
+                    Time to call
+                    <select name="typePhone" id="typePhone">
+                        <option value="Morning">Morning</option>
+                        <option value="Noon">Noon</option>
+                        <option value="Evening">Evening</option>
+                    </select>
+                </label>
+                <hr>
+            </div>
                 <label for="email">
                     Email:
                 <input type="email" name="email" id="email" placeholder="Enter your email address">
                 </label>
-                <br>
                 <label for="password">
                     Password:
-                <input type="password" name="password" id="password" placeholder="Enter your password">
+                <input type="password" name="password" id="password" placeholder="Select a password">
                 </label>
-
+            <label for="color">Favorite Color</label>
+            <input type="color" id="color" name="color">
             </div>
             <div>
                 <h3>2. More about you.</h3>
@@ -52,6 +70,9 @@
                     <img src="http://d298698jupi3ov.cloudfront.net/blacklava/250A3D7A-BFD7-4A94-870C-9F2350C1DD3B.jpg" alt="other">
                 <input type="radio" name="ref" value="Other" id="Other"><br>
                 </label>
+                    <label for="ifOther">
+                        <input type="text" name="ifOther" id="ifOther" placeholder="Explain if other">
+                    </label>
                 </div>
             </div>
             <div>
@@ -68,7 +89,7 @@
             <br>
             <div>
                 <h3>5. Agreement</h3>
-                <p>By checking the box below you <br>agree to submit your <br>information to Veridian Dynamics</p>
+                <p>By checking the box below you <br>agree to submit your <br>information to Veridian Dynamics&trade;</p>
                 <label for="agreement">
                     I agree
                 <input name="agreement" value="true" type="checkbox" id="agreement" autofocus required>
@@ -80,8 +101,13 @@
                 </label>
             </div>
         </form>
+        <footer>
+            <nav>
+                <p>
+                    <a href="welcome.html">Veridian Dynamics&trade;</a>
+                </p>
+            </nav>
+        </footer>
     </main>
-    <footer>
-    </footer>
 </body>
 </html>

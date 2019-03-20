@@ -1,10 +1,42 @@
 .bar {
     background-color: darkslategray;
+
 }
 .bar a{
     color: lightgrey;
+    padding-left: 10px;
+    text-decoration: none;
+    padding-bottom: 5px;
 }
 img{
-    height: 40px;
-    Width: 40px
+    height: 35px;
+    height: 35px;
+    Width: 35px
 }
+table{
+    border: solid darkgrey .5px;
+}
+footer{
+    font-size: 8px;
+}
+
+td{
+    border-bottom: solid darkgrey .5px;
+}
+tableHeader{
+    border: solid darkgrey .5px;
+}
+.tableHeader th{
+    background-color: lightgrey;
+}
+.tabBar a{
+    color: darkgrey;
+    text-decoration: none;
+
+}
+#peopleTab{
+    border: solid grey 1px;
+    padding: 5px;
+    border-top: solid orange 3px;
+}
+

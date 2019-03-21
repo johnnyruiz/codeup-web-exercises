@@ -4,7 +4,7 @@ body{
     background-image: url(https://dao27ppzr58tl.cloudfront.net/wp-content/uploads/2015/04/160215-ALBERT-YIN-208180549.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2296px;
+    background-size: 2357px;
     margin-left: 225px;
     color: white;
     border-left: solid lightgrey 2px;
@@ -36,7 +36,7 @@ h1 main footer{
     text-decoration: underline;
 }
 h1{
-    color: darkslategray;
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -44,10 +44,10 @@ h1{
     color: whitesmoke;
 }
 .titleSection h1{
-    background-color: whitesmoke;
+    background-color: black;
     opacity: 0.6;
-    border-top: black 2px solid;
-    border-bottom: solid black 2px;
+    border-top: whitesmoke 2px solid;
+    border-bottom: solid whitesmoke 2px;
 }
 table{
     color: whitesmoke;
@@ -119,4 +119,8 @@ p .guarantee{
 #tableBackground{
     background-image: url("http://crystalnews.org/wp-content/uploads/2016/10/CekfJRO.jpg");
     border-top: lightgrey solid 2px;
+}
+#vision{
+    font-size: 33px;
+    height: 50px;
 }

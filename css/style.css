@@ -1,12 +1,103 @@
+body{
+    height: 1660px;
+    width: 1004px;
+    background-image: url(https://dao27ppzr58tl.cloudfront.net/wp-content/uploads/2015/04/160215-ALBERT-YIN-208180549.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2238px;
+    margin-left: 225px;
+    color: white;
+    border-left: solid lightgrey 2px;
+    border-right: solid lightgrey 2px;
+}
+main{
+    margin-top: 130px;
+}
 /*Images re-sized to evenly sit next to each other*/
 img{
     height: 350px;
     width: 500px;
 }
+img:hover{
+    opacity: 0.6;
+}
+header{
+    text-align: center;
+    position: fixed;
+    background-color: darkslategray;
+    width: 1003px;
+    border: solid whitesmoke 2px;
+}
 hr {
     color: gray;
 }
+h1 main footer{
+    text-decoration: underline;
+}
+hr{
+    width: 1004px;
+}
+h1{
+    color: black;
+}
 
 .fancy-header{
-    color: slategray;
+    color: whitesmoke;
+}
+#clientForm:hover{
+    color: white;
+}
+.titleSection h1{
+    background-color: whitesmoke;
+    opacity: 0.6;
+}
+table{
+    color: darkslategray;
+    margin-left: 28%;
+    font-size: 30px;
+    border: solid slategray 1px;
+    background-color: whitesmoke;
+    opacity: 0.6;
+}
+th{
+    border-bottom: whitesmoke 1px solid;
+}
+footer p{
+    text-align:center;
+    border-top: solid lightgrey 2px;
+}
+footer nav{
+    background-color: darkslategray;
+}
+a{
+    color: whitesmoke;
+}
+nav{
+    height: 41px;
+    border: solid lightgrey 2px;
+    margin-bottom: 5px;
+}
+nav .pageGuide{
+    margin-left: 25px;
+    margin-top: 5px;
+}
+nav #clientForm{
+    float: right;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+nav div{
+    margin-top: 5px;
+    margin-left: 210px;
+    display: inline-block;
+}
+ol{
+    list-style-type: upper-roman;
+}
+}
+.goals{
+    list-style: circle;
+}
+.coreValues{
+    list-style: square;
 }

@@ -59,11 +59,11 @@ footer {
     text-align: center;
 }
 a:hover {
-    color: gold;
+    color: blue;
 }
 a:active {
     color: lightgrey;
 }
 a{
-    color:whitesmoke;
+    color: darkslategray;
 }

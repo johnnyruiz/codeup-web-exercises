@@ -8,7 +8,7 @@ body, html {
 div{
     border: solid lightgrey 1px;
     border-radius:10px;
-    margin: 10px 400px 10px 400px;
+    margin: 10px 25%;
     padding: 10px;
 }
 .message-info{

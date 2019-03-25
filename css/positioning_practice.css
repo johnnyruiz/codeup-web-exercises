@@ -1,15 +1,17 @@
 body{
     height: 100%;
     width: 100%;
+    background-color: black;
 }
 header{
     height: 25%;
     width: 100%;
 }
 #spacebetween{
-    background-color: lightgrey;
+    background-image: url("https://wikitravel.org/upload/shared//3/36/Hill_Country_Banner.jpg");
     height: 150px;
     width: 100%;
+    background-position: 37% 24%;
 }
 .PageNav{
     position: fixed;
@@ -69,7 +71,6 @@ top: 1%
     text-decoration: underline;
 }
 main{
-    background-color: black;
     height: 800px;
     position: relative;
 }
@@ -77,10 +78,13 @@ main{
     background-color: lightgray;
     height: 400px;
     position: absolute;
-    top: 21%;
+    top: 40%;
     left: 2%;
     width: 15%;
     z-index: 10;
+}
+.MainArticle1 a{
+    color: black;
 }
 .MainArticle2{
     background-color: lightgray;
@@ -124,6 +128,51 @@ main{
     top: 0;
     left: 42%;
 }
+.MainArticle4{
+    background-color: lightgray;
+    position: absolute;
+    top: 100%;
+    left: 2%;
+    height: 106%;
+    width: 216px;
+}
+.adBox{
+    height: 9%;
+    width: 45%;
+    background-color: whitesmoke;
+    border: solid black 1px;
+    border-radius: 10%;
+    position: relative;
+    left: 25.5%;
+    padding-top: 7%;
+    margin-top: 31%;
+}
+.MainArticle5{
+    background-color: lightgray;
+    background-size: 100%;
+    position: absolute;
+    top: 92%;
+    left: 18%;
+    height: 98%;
+    width: 54%;
+
+}
+.MainArticle5>img{
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 30%;
+    width: 30%;
+    border: solid whitesmoke 2px;
+}
+.MainArticle6{
+    background-color: lightgray;
+    position: absolute;
+    top: 74%;
+    right: 2%;
+    height: 300px;
+    width: 25%;
+
+}
 .Welcome{
     height: 86px;
     width: 775px;
@@ -131,9 +180,10 @@ main{
     color: white;
     position: relative;
     left: 18%;
-    top: 0%;
+    top: -3%;
     text-align: center;
     padding-top: 39px;
+    font-size: 4em;
 }
 article>h1{
     background-color: whitesmoke;
@@ -161,6 +211,44 @@ a:hover{
     text-decoration: underline;
     font-size: 4em;
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
+}
+article{
+    border: solid whitesmoke 2px;
+}
+.ads {
+    position: absolute;
+    left: 1%;
+    top: 87%;
+    color: white;
+    font-family: cursive;
+    font-size: 3em;
+    z-index: 15;
+}
+.adBox:hover{
+    transform: scale(1.5);
+}
+img:hover{
+    opacity: 0.6;
+}
+.horseimg {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    height: 250px;
+    width: 250px;
+    z-index: 5;
+    border-radius: 40%;
+}
+.horseimg:hover {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    height: 250px;
+    width: 250px;
+    z-index: 5;
+    transition: transform .5s ease;
+    transform: rotate(40deg);
+    border-radius: 40%;
 }

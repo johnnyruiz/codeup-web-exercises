@@ -1,0 +1,108 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+header{
+    height: 25%;
+    width: 100%;
+}
+.PageNav{
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: slategray;
+    z-index: 100;
+    top: 0;
+}
+.NavLink{
+    padding-left: 12%;
+    margin-top: 50%;
+    z-index: 1000;
+    position: relative;
+    top: 16%;
+    font-size: 2em;
+    color: whitesmoke;
+}
+main{
+    background-color: black;
+    height: 800px;
+    position: relative;
+}
+.MainArticle1{
+    background-color: lightgray;
+    height: 400px;
+    position: absolute;
+    top: 7%;
+    left: 2%;
+    width: 15%;
+    z-index: 10;
+}
+.MainArticle2{
+    background-color: lightgray;
+    height: 400px;
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    width: 54%;
+    z-index: 10;
+}
+.MainArticle2 p{
+    border: solid whitesmoke 2px;
+    padding: 10px;
+    position: relative;
+    background-color: black;
+    color: whitesmoke;
+    margin-left: 16px;
+    margin-right: 16px;
+    height: 72%;
+}
+.MainArticle3{
+    background-color: lightgray;
+    height: 400px;
+    position: absolute;
+    top: 7%;
+    right: 2%;
+    width: 25%;
+    z-index: 10;
+}
+.MainArticle3 img{
+    height: 67%;
+    width: 85%;
+    position: relative;
+    top: 10%;
+    left: 7%;
+    border: solid whitesmoke 2px;
+    border-radius: 50%;
+}
+.MainArticle3 h3{
+    position: relative;
+    top: 0;
+    left: 42%;
+}
+.Welcome{
+    height: 86px;
+    width: 775px;
+    border: solid whitesmoke 1px;
+    color: white;
+    position: relative;
+    left: 18%;
+    top: 7%;
+    text-align: center;
+    padding-top: 39px;
+}
+article>h1{
+    background-color: whitesmoke;
+    border: black solid 1px;
+    padding-left: 5px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+}
+.ProductList{
+    padding-left: 10%;
+    font-size: 1.5em;
+    padding-bottom: 5%;
+    position: relative;
+    top: 0;
+    left: 12%;
+}

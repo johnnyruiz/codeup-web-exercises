@@ -122,3 +122,12 @@ a {
 .media-body{
     width: calc(100% - 50px)
 }
+hr{
+   size: .5em;
+   margin: 0;
+   padding: 0;
+   opacity: 60%;
+}
+#littleIdea p{
+    padding-left: 48px;
+}

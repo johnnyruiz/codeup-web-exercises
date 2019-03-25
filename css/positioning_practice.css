@@ -6,22 +6,67 @@ header{
     height: 25%;
     width: 100%;
 }
+#spacebetween{
+    background-color: lightgrey;
+    height: 150px;
+    width: 100%;
+}
 .PageNav{
     position: fixed;
     height: 60px;
     width: 100%;
-    background-color: slategray;
+    background-color: whitesmoke;
     z-index: 100;
     top: 0;
 }
 .NavLink{
-    padding-left: 12%;
+    margin-left: 12%;
     margin-top: 50%;
+    padding: 3px;
     z-index: 1000;
     position: relative;
     top: 16%;
     font-size: 2em;
-    color: whitesmoke;
+    color: black;
+    text-decoration: none;
+}
+.PageNav>img{
+    height: 53px;
+    width: 69px;
+}
+#logo{
+    position: absolute;
+    left: 1%;
+    top: 1%
+}
+#home{
+position: absolute;
+left: 18%;
+top: 1%
+}
+#aboutus{
+position: absolute;
+left: 40%;
+top: 4%
+}
+#help{
+position: absolute;
+left: 56%;
+top: 5%
+}
+#FAQ{
+position: absolute;
+left: 73%;
+top: 5%
+}
+#cart{
+position: absolute;
+left: 89%;
+top: 1%
+}
+.PageNav>a:hover{
+    color: black;
+    text-decoration: underline;
 }
 main{
     background-color: black;
@@ -32,7 +77,7 @@ main{
     background-color: lightgray;
     height: 400px;
     position: absolute;
-    top: 7%;
+    top: 21%;
     left: 2%;
     width: 15%;
     z-index: 10;
@@ -41,7 +86,7 @@ main{
     background-color: lightgray;
     height: 400px;
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 18%;
     width: 54%;
     z-index: 10;
@@ -60,7 +105,7 @@ main{
     background-color: lightgray;
     height: 400px;
     position: absolute;
-    top: 7%;
+    top: 21%;
     right: 2%;
     width: 25%;
     z-index: 10;
@@ -86,7 +131,7 @@ main{
     color: white;
     position: relative;
     left: 18%;
-    top: 7%;
+    top: 0%;
     text-align: center;
     padding-top: 39px;
 }
@@ -105,4 +150,17 @@ article>h1{
     position: relative;
     top: 0;
     left: 12%;
+}
+a:hover{
+    color:whitesmoke;
+    text-decoration: blink;
+}
+#spacebetween p{
+    color: whitesmoke;
+    font-family: cursive;
+    text-decoration: underline;
+    font-size: 4em;
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }

@@ -61,7 +61,7 @@ body img{
         top: 2%;
     }
 }
-@media screen and (min-width: 367px) and (max-width:935px) {
+@media screen and (min-width: 367px) and (max-width:2000px) {
     h1 {
         margin-left: 2%
     }
@@ -77,6 +77,9 @@ body img{
     }
     .header-img{
         margin-top: 4%;
+    }
+    .header-img img{
+        width:
     }
     .alert-info{
         visibility: hidden;
@@ -95,9 +98,9 @@ body img{
     }
     footer img{
         height: 17%;
-        width: 6%;
+        width: 3%;
         position: relative;
-        right: -58%;
+        right: -68%;
     }
     footer {
         position: relative;

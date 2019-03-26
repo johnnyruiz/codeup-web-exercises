@@ -12,6 +12,7 @@ header{
     height: 150px;
     width: 100%;
     background-position: 37% 24%;
+    z-index: 6;
 }
 .PageNav{
     position: fixed;
@@ -240,6 +241,7 @@ img:hover{
     width: 250px;
     z-index: 5;
     border-radius: 40%;
+    transition: transform .5s ease;
 }
 .horseimg:hover {
     position: absolute;

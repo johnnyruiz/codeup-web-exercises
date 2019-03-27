@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/order-pizza.css">
+    <title>Title</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-light bg-light">
+        <a href="#" class="navbar-brand">Pizza world</a>
+        <a href="#" class="navbar-brand">Order online</a>
+        <a href="#" class="navbar-brand">Menu</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+        </form>
+        <a class="navbar-brand" href="#">
+            <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/user.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Sign up
+        </a>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to Pizza world</h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Build your own pizza!</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-secondary"> 1 </span> Size and crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-secondary"> 2 </span> Cheese and sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><span class="badge badge-secondary"> 3 </span> Toppings</a>
+            </li>
+        </ul>
+        <div class="card">
+            <h5 class="card-header">Choose size and crust</h5>
+            <div class="card-body">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Hand Tossed
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garlic seasoned crust with rich, buttery taste</li>
+                        <li class="list-group-item"><input type="radio" name="Size" value="ht_small" id="HTs"> Small (10")</li>
+                        <li class="list-group-item"><input type="radio" name="Size" value="ht_large" id="HTl"> Medium (12")</li>
+                    </ul>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header options">
+                        Crispy Thin
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> Thin enough for optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item"><input type="radio" name="Size" value="ct_small" id="ct"> Small (12")</li>
+                        <li class="list-group-item"><input type="radio" name="Size" value="ct_medium" id="ct"> Large (14")</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn-primary">Next step ></a>
+            </div>
+        </div>
+        <div class="card">
+            <h5 class="card-header">Choose Cheese and Sauce</h5>
+            <div class="card-body">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Cheese
+                    </div>
+                    <label for="cheese">
+                        How Much?
+                    <select id="cheese"class="form-control">
+                        <option>Light</option>
+                        <option>Normal</option>
+                        <option>Extra</option>
+                        <option>BBQ Sauce</option>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header options">
+                        Sauce
+                        </div>
+
+                    </div>
+                </div>
+                    <a href="#" class="btn btn-primary">Next step ></a>
+                    <a href="#" class="btn btn-primary"> < Previous step </a>
+            </div>
+                <div class="card">
+                    <h5 class="card-header">Choose Toppings</h5>
+                    <div class="card-body">
+                    </div>
+                <div class="card-body">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Choose Non-Meats
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

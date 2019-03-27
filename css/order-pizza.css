@@ -1,0 +1,9 @@
+.jumbotron{
+    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
+    background-position: center;
+}
+.jumbotron h1{
+}
+.btn-primary{
+    float: right;
+}

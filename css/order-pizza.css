@@ -1,9 +1,19 @@
 .jumbotron{
     background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
-    background-position: center;
+    background-size:cover ;
+    padding-left: 0;
+    padding-right:0;
 }
 .jumbotron h1{
+    text-align: center;
+    background-color:white;
+    margin:0;
+    opacity:0.70;
 }
-.btn-primary{
-    float: right;
+nav.navbar{
+    padding-top:0;
+    padding-bottom:0;
+}
+nav li{
+    padding:8px;
 }

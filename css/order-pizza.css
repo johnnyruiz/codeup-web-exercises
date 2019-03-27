@@ -3,12 +3,13 @@
     background-size:cover ;
     padding-left: 0;
     padding-right:0;
+    width: 100%;
 }
 .jumbotron h1{
     text-align: center;
     background-color:white;
     margin:0;
-    opacity:0.70;
+    opacity:0.7;
 }
 nav.navbar{
     padding-top:0;
@@ -17,3 +18,18 @@ nav.navbar{
 nav li{
     padding:8px;
 }
+.card-header{
+    background-color: red;
+    color: white;
+}
+* a{
+    color: red;
+}
+.tabs:hover{
+    background-color: red;
+    transition: 1s ease;
+    color: white;
+}
+
+
+

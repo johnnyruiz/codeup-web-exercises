@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/order-pizza.css">
     <title>Order Pizza!</title>
 </head>
@@ -41,18 +40,18 @@
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="#SizeAndCrustCard"><span class="badge badge-pill badge-dark">1</span> Size and crust</a>
+            <a class="nav-link tabs" href="#Size"><span class="badge badge-pill badge-dark">1</span> Size and crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#CheeseAndSauceCard"><span class="badge badge-pill badge-dark">2</span> Cheese and Sauce</a>
+            <a class="nav-link tabs" href="#Cheese"><span class="badge badge-pill badge-dark">2</span> Cheese and Sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#ToppingsCard"><span class="badge badge-pill badge-dark">3</span> Toppings</a>
+            <a class="nav-link tabs" href="#Toppings"><span class="badge badge-pill badge-dark">3</span> Toppings</a>
         </li>
     </ul>
     <form method="POST" action="https://www.elformo.com/forms/9088a98a-52ec-4d1e-b24b-66beb1370583" accept-charset="UTF-8">
-        <div class="card mt-1 mb-3" id="SizeAndCrustCard">
-            <div class="card-header bg-primary text-light">
+        <div class="card mt-1 mb-3" id="Size">
+            <div class="card-header  text-light">
                 Choose size and crust
             </div>
             <div class="card-body">
@@ -108,11 +107,11 @@
                 </div>
             </div>
             <div class="card-footer text-right">
-                <a href="#CheeseAndSauceCard" class="btn btn-primary">Next Step > </a>
+                <a href="#Cheese" class="btn btn-primary">Next Step > </a>
             </div>
         </div>
-        <div class="card mt-1 mb-3" id="CheeseAndSauceCard">
-            <div class="card-header bg-primary text-light">
+        <div class="card mt-1 mb-3" id="Cheese">
+            <div class="card-header text-light">
                 Choose Cheese and Sauce
             </div>
             <div class="card-body">
@@ -165,7 +164,7 @@
             </div>
         </div>
         <div class="card mt-1 mb-3" id="Toppings">
-            <div class="card-header bg-primary text-light">
+            <div class="card-header text-light">
                 Choose Toppings
             </div>
             <div class="card-body">

@@ -20,15 +20,68 @@
         var Facebook = (10 * 350);
         var WeekPay = Google + Amazon + Facebook
 
-        console.log("Expected pay is $" + WeekPay)
+        console.log("Expected pay is $" + WeekPay);
 
         //Solution to 3rd word problem
-        var MaxStudents <=25;
-        var MaxDaysPerWeek <=5;
-        var MaxHoursPerday <=8;
 
+        function ClassSize() {
+            var ClassSize, ClassRoom;
+            ClassSize = Number(document.getElementById("ClassSize").value);
+            if (isNaN(ClassSize)) {
+                ClassRoom = "Input is not a number";
+            } else {
+                ClassRoom = (ClassSize < 25) ? "Good" : "Class is full!";
+            }
+            document.getElementById("Size").innerHTML = ClassRoom;
+        }
+        function DaysPerWeek() {
+            var DaysPerWeek, Days;
+            DaysPerWeek = Number(document.getElementById("DaysPerWeek").value);
+            if (isNaN(DaysPerWeek)) {
+                Days = "Input is not a number";
+            } else {
+                Days = (DaysPerWeek < 6) ? "Good" : "Too many days";
+            }
+            document.getElementById("Days").innerHTML = Days;
+        }
+        function HoursPerDay() {
+            var HoursPerDay, Hours;
+            HoursPerDay = Number(document.getElementById("HoursPerDay").value);
+            if (isNaN(HoursPerDay)) {
+                Hours = "Input is not a number";
+            } else {
+                Hours = (HoursPerDay < 8) ? "Good" : "Too many hours";
+            }
+            document.getElementById("Hours").innerHTML = Hours;
+        }
+
+        //Solution to 4th word problem
+
+        //item >= 2 && date >= 13) || PremiumMember
+
+        //Exercise 4
+
+        var username = 'codeup';
+        var password = 'notastrongpassword';
+
+        goodUsername = (username.length >= 5) && (username.length <= 20);
+        goodPassword = (password = !username);
+        username.trim();
+        password.trim();
 
 
     </script>
-</body>
+
+    <label for="ClassSize">Enter the current number of students</label>
+        <input id="ClassSize"/>
+            <button onclick="ClassSize()"> Submit!</button>
+        <p id="Size"></p>
+    <label for="DaysPerWeek">Enter the number of days per week</label>
+        <input id="DaysPerWeek"/>
+            <button onclick="DaysPerWeek()"> Submit!</button>
+        <p id="Days"></p>
+    <label for="HoursPerDay">Enter the number of hours per day</label>
+        <input id="HoursPerDay"/>
+            <button onclick="HoursPerDay()"> Submit!</button>
+        <p id="Hours"></p>
 </html>

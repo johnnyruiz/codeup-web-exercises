@@ -159,9 +159,39 @@ switch (randomColor){
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(total){
-
+function calculateTotal(luckyNumber, total){
+    var  finalTotal;
+    switch (parseInt(luckyNumber)) {
+        case (luckyNumber === 0):
+            finalTotal= total;
+            break;
+        case (luckyNumber = 1):
+            alert("You are getting a 10% discount");
+            finalTotal = total -(total * .10);
+            break;
+        case (luckyNumber = 2):
+            alert("You are getting a 25% discount");
+            finalTotal = total - (total * .25);
+            break;
+        case (luckyNumber = 3):
+            alert("You are getting a 35% discount");
+            finalTotal = total = (total * .35);
+            break;
+        case (luckyNumber = 4):
+            alert("You are getting a 50% discount");
+            finalTotal = total = (total * .50);
+            break;
+        case (luckyNumber = 5):
+            alert("You are getting a 100% discount");
+            finalTotal = total = 0;
+            break;
+        default:
+            finalTotal = total
+    }
+    return finalTotal;
 }
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -169,6 +199,10 @@ function calculateTotal(total){
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+//Generate a random number between 0 and 6
+    var luckyNumber = Math.floor(Math.random() * 5 + 1);
+
+    var userTotal = prompt("What is your total");
+    alert(calculateTotal(luckyNumber, userTotal));
+    alert("You saved" + (userTotal - finalTotal);
 })();

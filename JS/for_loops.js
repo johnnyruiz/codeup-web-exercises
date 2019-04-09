@@ -1,7 +1,11 @@
 "use strict";
 
 (function () {
-var b = 1;
+    var b = 1;
+    do {
+        var userInput = prompt("Enter a number for a multiplication chart");
+    } while (isNaN(+userInput));
+
 function showMultiplicationTable(a){
     do {
         console.log(a + " x " + b + " = " + (a * b));
@@ -9,7 +13,7 @@ function showMultiplicationTable(a){
     } while (b <= 10)
 }
 
-console.log(showMultiplicationTable(7));
+console.log(showMultiplicationTable(userInput));
 
     for(var x = 100; x >= 5; x -= 5){
         console.log(x);

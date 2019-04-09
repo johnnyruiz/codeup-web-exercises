@@ -2,11 +2,11 @@
 
 (function () {
 
-var a = 1;
+var a = 2;
 
-    while(a <= 100){
-    console.log(a * a);
-    a++;
+    while(a <= 65536){
+    console.log(a);
+    a *= 2;
     }
 
     var allCones = Math.floor(Math.random() * 50) + 50;

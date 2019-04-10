@@ -6,8 +6,20 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
+
 var names = ["Jordan","Joshua","Jennifer", "Johnny", "Jake"];
 
+var userName = prompt("What is your name?");
+
+var dogName = prompt ("What is your dog's name?");
+//adds the entered name to the beginning of the array
+names.push(userName);
+//adds the entered name to the end of the array
+names.push(dogName);
+
+//below will alphabetize the array..
+//alert("alphabetizing the names");
+//names.sort();
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -33,8 +45,8 @@ for (var i = 0; i < names.length; i++) {
      * Refactor your above code to use a `forEach` loop
      */
 
-    names.forEach(function(element){
-        console.log(element);
+    names.forEach(function(name){
+        console.log(name);
     });
     /**
      * TODO:

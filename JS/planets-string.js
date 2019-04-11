@@ -44,18 +44,47 @@
     }
     console.log(alphabetPosition(alphabet,"x"));
 
-   // var arr1 = ["bob", 1, true, 1, 2];
-   // var arr2 = [2, undefined, 0, 2, "apple"];
-   // //needs work
-   // function isolateNumbers(arr) {
-   //     arr.forEach(function (element)){
-   //         if (isNaN(+element)){
-   //             arr.pop(element);
-   //         }
-   //     }
+    var arr1 = ["bob", 1, true, 1, 2];
+    var arr2 = [2, undefined, 0, 2, "apple"];
+
+////needs work
+//    function isolateNumbers(arr) {
+//        arr.forEach(function (element){
+//            if (isNaN(element)){
+//                arr.pop(+element);
+//                return arr;
+//            }
+//        });
+//    }
+//
+//    console.log(isolateNumbers(arr1));
+//
+    //array for longest and shortest element in array
+    var monthsStr = ["January", "February", "March", "April", "May"];
+//variables used in loops
+    var lgth = 0
+    var longest;
+    var shortest;
+
+//for loop that returns the longest array
+    for(var i = 0; i < monthsStr.length; i++){
+        if(monthsStr[i].length > lgth){
+            var lgth = monthsStr[i].length;
+            longest = monthsStr[i];
+        }
+    }
+    console.log(longest);
+//for loop that returns the shortest array
+    for(var i = 0; i < monthsStr.length; i++){
+        if(monthsStr[i].length < lgth){
+            var lgth = monthsStr[i].length;
+            shortest = monthsStr[i];
+        }
+    }
+    console.log(shortest);
+    //needs work
+   // function determineLegnth(arr,){
+   //     return arr.indexOf();
    // }
-   // function evaluateArray(total, num){
-   //     return total + num;
-   // }
-   // console.log(evaluateArray());
+
 })();

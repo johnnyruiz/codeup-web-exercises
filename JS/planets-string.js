@@ -32,4 +32,30 @@
     var planetsList = "<li>" + planetsArray.join("</li> <li>" ) + "</li>";
 
     console.log(planetsList);
+
+
+    //Bonus Bonuses
+
+    //alphabet position bonus. takes in the array alphabet and the letter we are looking for
+    // and returns the value of the order the letter is in the alphabet
+    var alphabet = ["a" ,"b" ,"c" ,"d" ,"e" ,"f" ,"g" ,"h" ,"i" ,"j" ,"k" ,"l" ,"m" ,"n" ,"o" ,"p" ,"q" ,"r" ,"s" ,"t" ,"u" ,"v" ,"w" ,"x" ,"y" ,"z" ];
+    function alphabetPosition(arr, element){
+        return arr.indexOf(element) + 1;
+    }
+    console.log(alphabetPosition(alphabet,"x"));
+
+   // var arr1 = ["bob", 1, true, 1, 2];
+   // var arr2 = [2, undefined, 0, 2, "apple"];
+   // //needs work
+   // function isolateNumbers(arr) {
+   //     arr.forEach(function (element)){
+   //         if (isNaN(+element)){
+   //             arr.pop(element);
+   //         }
+   //     }
+   // }
+   // function evaluateArray(total, num){
+   //     return total + num;
+   // }
+   // console.log(evaluateArray());
 })();

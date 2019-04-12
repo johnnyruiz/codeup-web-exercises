@@ -167,4 +167,9 @@ var books =
 
     console.log(books);
 
+    books.forEach(function(writer){
+        console.log("Author : " + writer.author.firstName + " " + writer.author.lastName);
+        console.log("These are the books we have for the author ");
+        console.log(writer.title);
+    });
 })();

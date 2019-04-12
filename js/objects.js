@@ -53,7 +53,7 @@
     shoppers.forEach(function(shopper){
         console.log(shopper.name + ", your total is :$" + shopper.amount);
         if (shopper.amount > 200){
-            console.log("You have received a 12% discount bring your total too :$" + (shopper.amount - (shopper.amount * .12)));
+            console.log("You have received a 12% discount bringing your total too :$" + (shopper.amount - (shopper.amount * .12)));
         } else {
             console.log("You do not qualify for a discount today.")
         }

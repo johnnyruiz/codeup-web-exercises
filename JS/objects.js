@@ -46,8 +46,13 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function(amount){
-        console.log(name.amount);
+    shoppers.forEach(function(shopper){
+        console.log(shopper.name + ", your total is :" + shopper.amount);
+        if (shopper.amount >= 200){
+            console.log("You have received a 12% discount bring your total too :" + (shopper.amount - (shopper.amount * .12)));
+        } else {
+            console.log("You do not qualify for a discount today.")
+        }
     });
 
     /** TODO:
@@ -62,7 +67,30 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+var books =
+        [
+            {
+                title: ["Lord of the Flies", "The Inheritors", "Free Fall", "The Pyramid", "To the Ends of the Earth"] ,
+              author: {
+                  firstName: "William",
+                  lastName: "Golding"
+              },
+              },
+            {
+                title: ["The Chamber of Secrets", "The Prisoner of Azkaban", "The Goblet of Fire", "The Half-Blood Prince", "The Deathly Hallows"],
+                author: {
+                    firstName: "J.K",
+                    lastName: "Rowling"
+                },
+            },
+            {
+                title: ["A Game of Thrones", "A Clash of Kings", "A Storm of Swords", "A Feast for Crows", "A dance with Dragons"],
+                author: {
+                    firstName: "George R.R",
+                    lastName: "Martin"
+                },
+            },
+        ];
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -87,7 +115,12 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function(writer){
+        console.log("Author : " + writer.author.firstName + " " + writer.author.lastName);
+        writer.title.forEach(function(title, i){
+            console.log("Book Number " + (i + 1) + " is :" + title);
+        });
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -98,5 +131,39 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    var newTitle;
+    var newAuthor;
+    var addBook = confirm("Would you like to create a new book?");
+
+
+    function createBook(boolean){
+        if(boolean === true) {
+            do {
+                var newAuthorFirst = prompt("Enter the first name of your new books author");
+                var newAuthorLast = prompt("Enter the last name of the new books author");
+            } while (String(newAuthorFirst || newAuthorLast) === false);
+            do {
+                var newTitle = prompt("Enter the name of your new book")
+            } while (String(newTitle) === false);
+        } else {
+            alert("thank you")
+        }
+        // return {
+        //     books.author.firstName.newAuthor,
+        //     books.title.([newTitle])
+        // }
+        return {
+            title: newTitle,
+            author: {
+                firstName: newAuthorFirst,
+                lastName: newAuthorLast
+            }
+        }
+
+    }
+
+    books.push(createBook(addBook));
+    console.log(createBook(addBook));
+    console.log(books)
 
 })();

@@ -25,6 +25,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function(){
+      return "Hello from " + this.firstName + " " + this.lastName + "!";
+    };
+    console.log(person.sayHello());
     console.log("Hello from " + person.firstName + " " + person.lastName + "!");
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -47,9 +51,9 @@
     ];
 
     shoppers.forEach(function(shopper){
-        console.log(shopper.name + ", your total is :" + shopper.amount);
-        if (shopper.amount >= 200){
-            console.log("You have received a 12% discount bring your total too :" + (shopper.amount - (shopper.amount * .12)));
+        console.log(shopper.name + ", your total is :$" + shopper.amount);
+        if (shopper.amount > 200){
+            console.log("You have received a 12% discount bring your total too :$" + (shopper.amount - (shopper.amount * .12)));
         } else {
             console.log("You do not qualify for a discount today.")
         }
@@ -131,6 +135,7 @@ var books =
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
     var newTitle;
     var newAuthor;
     var addBook = confirm("Would you like to create a new book?");
@@ -141,17 +146,13 @@ var books =
             do {
                 var newAuthorFirst = prompt("Enter the first name of your new books author");
                 var newAuthorLast = prompt("Enter the last name of the new books author");
-            } while (String(newAuthorFirst || newAuthorLast) === false);
+            } while (typeof (newAuthorFirst || newAuthorLast) !== 'string');
             do {
-                var newTitle = prompt("Enter the name of your new book")
-            } while (String(newTitle) === false);
+                var newTitle = prompt("Enter the name of your new book");
+            } while (typeof (newTitle) !== 'string');
         } else {
-            alert("thank you")
+            alert("thank you");
         }
-        // return {
-        //     books.author.firstName.newAuthor,
-        //     books.title.([newTitle])
-        // }
         return {
             title: newTitle,
             author: {
@@ -163,7 +164,7 @@ var books =
     }
 
     books.push(createBook(addBook));
-    console.log(createBook(addBook));
-    console.log(books)
+
+    console.log(books);
 
 })();

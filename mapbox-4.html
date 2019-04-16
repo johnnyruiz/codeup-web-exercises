@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox 2</title>
+    <title>Mapbox 4</title>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <style>
@@ -21,6 +21,8 @@
 </head>
 <body>
 <h1>Mapbox API</h1>
+<button id="btn-1">go to Zion!</button>
+<button id="btn-2">go to Hawaii!</button>
 <div id='map'></div>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
@@ -29,25 +31,33 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-77.0090, 38.8899],
+        center: [-98.4916, 29.4252],
         zoom: 11,
     });
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-77.0501, 38.8892])
-        .addTo(map);
+
+    var btn1 = document.getElementById('btn-1');
+    btn1.addEventListener('click', function () {
+    geocode("Zion National Park",mapboxKey).then(function(result){
+        map.setCenter(result);
+        map.setZoom(15)
+    });
+    }, false);
+    var Haw;
+    var btn2 = document.getElementById('btn-2');
+    reverseGeocode({lng: -157.8583, lat: 21.3069},mapboxKey).then(function(results){
+        console.log(results);
+        var Haw = results;
+        btn2.addEventListener('click', function () {
+            geocode(Haw,mapboxKey).then(function(result){
+                map.setCenter(result);
+                map.setZoom(13)
+            });
+        }, false);
+    });
 
 
-    var popup = new mapboxgl.Popup()
-        .setHTML("<p>Lincoln Memorial</p>");
-        marker.setPopup(popup);
 
-        geocode("The Alamo",mapboxKey).then(function(result){
-            map.setCenter(result);
-        });
 
-        reverseGeocode({lng:-77.0501, lat:38.8892}, mapboxKey).then(function(result){
-            console.log(result);
-        });
 
 </script>
 </body>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox 4</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body{
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        #map{
+            margin: 0 auto;
+            width: 1000px;
+            height: 80vh;
+        }
+        .buttons {
+            text-align: center;
+        }
+        .restaurants{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header">San Antonio</h1>
+<div>
+    <label for="userAdd">Enter a location :</label>
+    <input type="text" id="userAdd" name="userAdd" placeholder="location here">
+    <button id="btn-4" name="userAdd" type="submit">Go!</button>
+</div>
+<div class="buttons">
+    Zoom
+    <br>
+    <button id="btn-1">zoom out</button>
+    <button id="btn-2">zoom in</button>
+    <button id="btn-3">super zoom</button>
+</div>
+<div class="restaurants">
+    <button id="btn-5">Cheesecake Factory</button>
+    <button id="btn-6">PF Changs</button>
+    <button id="btn-7">Saltgrass Steakhouse</button>
+</div>
+<div id='map'></div>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+    var cheeseCakeAdd = '7400 San Pedro Ave, San Antonio, TX 78216';
+    var pfChangsAdd = '15900 LaCantera Pkwy. Bldg. #1, Ste 1100 San Antonio, TX 78256';
+    var saltGrassAdd = '11745 I-10 West11812 Bandera Rd, Helotes, TX 78023';
+    var changeHeader = document.getElementById('header');
+
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-98.4916, 29.4252],
+        zoom: 10,
+    });
+
+    var btn1 = document.getElementById('btn-1');
+    btn1.addEventListener('click', function (event) {
+    map.setZoom(5)
+    }, false);
+
+    var btn2 = document.getElementById('btn-2');
+    btn2.addEventListener('click', function (event) {
+        map.setZoom(15)
+        }, false);
+
+    var btn3 = document.getElementById('btn-3');
+    btn3.addEventListener('click', function (event) {
+        map.setZoom(18)
+    }, false);
+
+    var btn4 = document.getElementById('btn-4');
+    btn4.addEventListener('click' ,function (event) {
+        geocode(userAdd.value,mapboxKey).then(function (result) {
+            changeHeader.innerText = userAdd.value;
+            map.setCenter(result);
+            map.setZoom(13);
+        })
+    }, false);
+
+    var btn5 = document.getElementById('btn-5');
+    btn5.addEventListener('click' , function (event) {
+        geocode(cheeseCakeAdd,mapboxKey).then(function(result){
+            changeHeader.innerText = "The Cheese Cake Factory";
+            map.setCenter(result);
+            map.setZoom(13)
+        }, false);
+    }, false);
+
+    var btn6 = document.getElementById('btn-6');
+    btn6.addEventListener('click' , function (event) {
+        geocode(pfChangsAdd,mapboxKey).then(function(result){
+            changeHeader.innerText = "P.F. Chang's";
+            map.setCenter(result);
+            map.setZoom(13)
+        }, false);
+    }, false);
+
+    var btn7 = document.getElementById('btn-7');
+    btn7.addEventListener('click' , function (event) {
+        geocode(saltGrassAdd,mapboxKey).then(function(result){
+            changeHeader.innerText = "Salt Grass Steakhouse";
+            map.setCenter(result);
+            map.setZoom(13)
+        }, false);
+    }, false);
+
+    var Cheesemarker = new mapboxgl.Marker()
+        .setLngLat({lng: -98.49726, lat: 29.517342})
+        .addTo(map);
+
+    var Cheesepopup = new mapboxgl.Popup()
+        .setLngLat([-98.49726, 29.517342])
+        .setHTML("<img src='https://www.marketbeat.com/logos/cheesecake-factory-logo.png' width='50px' height='40px' alt='Saltgrass'><br><p>The Cheesecake Factory <br>7400 San Pedro Ave,<br> San Antonio, TX 78216</p>");
+        Cheesemarker.setPopup(Cheesepopup);
+
+
+
+    var Changsmarker = new mapboxgl.Marker()
+        .setLngLat({lng: -98.61593, lat: 29.59927})
+        .addTo(map);
+
+    var Changspopup = new mapboxgl.Popup()
+        .setLngLat([-98.61593, 29.59927])
+        .setHTML("<img src='https://pbs.twimg.com/profile_images/1058020572104286210/Ow_8xtoF_400x400.jpg' width='50px' height='60px' alt='Saltgrass'><br><p>P.F. Changs <br>15900 LaCantera Pkwy. Bldg. #1, Ste 1100 <br>San Antonio, TX 78256' </p>");
+        Changsmarker.setPopup(Changspopup);
+
+
+
+
+    var Grassmarker = new mapboxgl.Marker()
+        .setLngLat({lng: -98.668489, lat: 29.555442})
+        .addTo(map);
+
+    var Grasspopup = new mapboxgl.Popup()
+        .setLngLat([-98.668489, 29.555442])
+        .setHTML("<img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Saltgrass_Steakhouse.svg/1200px-Saltgrass_Steakhouse.svg.png' width='40px' height='30px' alt='Saltgrass'><br><p>Salt Grass Steak House <br> 11745 I-10 West11812 Bandera Rd,<br>Helotes, TX 78023</p> >");
+        Grassmarker.setPopup(Grasspopup);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox 1</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body{
+            margin: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        #map{
+            margin: 0 auto;
+            width: 1000px;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header">My Home Town</h1>
+<div id='map'></div>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-98.4916, 29.4252],
+        zoom: 11,
+
+    });
+
+    setTimeout(function() {
+        map.setZoom(3);
+        document.getElementById('header').innerText = "USA"
+    }, 2000);
+
+</script>
+</body>
+</html>

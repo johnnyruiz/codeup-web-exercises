@@ -81,8 +81,8 @@
     btn4.addEventListener('click' ,function (event) {
         geocode(userAdd.value,mapboxKey).then(function (result) {
             changeHeader.innerText = userAdd.value;
-            map.setCenter(result);
-            map.setZoom(13);
+            map.setCenter(result)
+            map.setZoom(13)
         })
     }, false);
 
@@ -90,7 +90,7 @@
     btn5.addEventListener('click' , function (event) {
         geocode(cheeseCakeAdd,mapboxKey).then(function(result){
             changeHeader.innerText = "The Cheese Cake Factory";
-            map.setCenter(result);
+            map.setCenter(result)
             map.setZoom(13)
         }, false);
     }, false);
@@ -99,7 +99,7 @@
     btn6.addEventListener('click' , function (event) {
         geocode(pfChangsAdd,mapboxKey).then(function(result){
             changeHeader.innerText = "P.F. Chang's";
-            map.setCenter(result);
+            map.setCenter(result)
             map.setZoom(13)
         }, false);
     }, false);
@@ -108,7 +108,7 @@
     btn7.addEventListener('click' , function (event) {
         geocode(saltGrassAdd,mapboxKey).then(function(result){
             changeHeader.innerText = "Salt Grass Steakhouse";
-            map.setCenter(result);
+            map.setCenter(result),
             map.setZoom(13)
         }, false);
     }, false);

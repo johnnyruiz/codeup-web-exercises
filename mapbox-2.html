@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox 1</title>
+    <title>Mapbox 2</title>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <style>
@@ -20,27 +20,21 @@
     </style>
 </head>
 <body>
-<h1 id="header">My Home Town</h1>
-<div id='map'></div>
-<script src="js/keys.js"></script>
-<script>
-    mapboxgl.accessToken = mapboxKey;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-98.4916, 29.4252],
-        zoom: 11,
-    });
+    <h1>Mapbox API</h1>
+    <div id='map'></div>
+    <script src="js/keys.js"></script>
+    <script>
+        mapboxgl.accessToken = mapboxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [-77.0090, 38.8899],
+            zoom: 11,
+        });
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0501, 38.8892])
+            .addTo(map);
 
-
-
-    change zoom after 2 seconds
-    setTimeout(function() {
-    map.setZoom(3);
-     document.getElementById('header').innerText = "USA"
-    }, 2000);
-
-
-</script>
+    </script>
 </body>
 </html>

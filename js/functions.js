@@ -77,6 +77,7 @@ var bill = prompt("Input the amount of bill");
 function calculateTip(percent, total)   {
     return (percent/100) * total;
 }
+
 alert("You should tip" + calculateTip(percentage, bill));
     /**
      * TODO:

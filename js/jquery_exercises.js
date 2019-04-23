@@ -53,3 +53,10 @@ $("li").hover(function() {
 }, function(){
     $(this).css("color", "black");
 });
+
+$('#hiding').click(function(){
+   $('img').fadeOut(1000) ;
+});
+$('#showing').click(function(){
+    $('img').fadeIn(1000) ;
+});

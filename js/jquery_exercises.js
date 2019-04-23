@@ -23,18 +23,19 @@
 //
 //$(".city").css("border", "solid 1px red");
 
-$("#falling").click(function(){
+// alert exp
+// alert($("#cityList").html());
+
+$("#hiding").click(function(){
     $("img").slideUp();
-
-
 });
 $("#showing").click(function(){
     $("img").slideDown();
 });
 
-$("li").css("font-size", "20px");
+$("li, ul").css("font-size", "20px");
 
 $("p").css("background-color", "yellow");
 
-$("#bottomContent").append("<h1>Fading out.......</h1>").fadeOut(6000);
+$("#bottomContent").append("<h1>Fading out...and In</h1>").fadeOut(6000).fadeIn(8000);
 

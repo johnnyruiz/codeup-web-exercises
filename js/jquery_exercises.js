@@ -26,16 +26,30 @@
 // alert exp
 // alert($("#cityList").html());
 
-$("#hiding").click(function(){
-    $("img").slideUp();
+//$("#hiding").click(function(){
+//    $("img").slideUp();
+//});
+//$("#showing").click(function(){
+//    $("img").slideDown();
+//});
+//
+//$("li, ul").css("font-size", "20px");
+//
+//$("p").css("background-color", "yellow");
+//
+//$("#bottomContent").append("<h1>Fading out...and In</h1>").fadeOut(6000).fadeIn(8000);
+
+
+$("h1").click(function(){
+    $(this).css("background", "blue");
 });
-$("#showing").click(function(){
-    $("img").slideDown();
+
+$("p").dblclick(function(){
+   $(this).css("font-size", "18px");
 });
 
-$("li, ul").css("font-size", "20px");
-
-$("p").css("background-color", "yellow");
-
-$("#bottomContent").append("<h1>Fading out...and In</h1>").fadeOut(6000).fadeIn(8000);
-
+$("li").hover(function() {
+    $(this).css("color", "red");
+}, function(){
+    $(this).css("color", "black");
+});

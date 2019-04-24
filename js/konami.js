@@ -7,6 +7,7 @@ $(document).keyup(function(event){
 $('#start').click(function(){
     $('#container').html('<img src="https://thumbs.gfycat.com/SpitefulLoneBittern-small.gif" alt="Castlevania">');
     $('#theme').trigger('play');
+    $('img').trigger('stop');
 });
 
 var code = 0;

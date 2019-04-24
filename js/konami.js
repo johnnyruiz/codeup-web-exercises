@@ -8,6 +8,8 @@ $('#start').click(function(){
     $('#container').html('<img src="https://thumbs.gfycat.com/SpitefulLoneBittern-small.gif" alt="Castlevania">');
     $('#theme').trigger('play');
     $('img').trigger('stop');
+    $("#Lives").css('visibility', 'visible');
+
 });
 
 var code = 0;
@@ -49,7 +51,9 @@ $(document).keyup(function(event){
 });
 function EasterEgg(a) {
     if (a === 11) {
-        $('#Lives').html("<p>Player Lives: 35</p>").css("color", "green").css("font-size", "30px");
+        $('#amountLives').text("35").css("color", "green");
         $("#code").trigger('play');
+        $("#codeActivated").css('visibility', 'visible').fadeOut(5000);
+
     }
 }

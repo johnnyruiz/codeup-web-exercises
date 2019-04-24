@@ -23,13 +23,17 @@
         width: 700px;
         margin-left: 3%;
         margin-bottom: 0;
+        border: solid black 5px;
     }
     #Lives{
         margin-left: 3%;
         font-size: 20px;
         position: absolute;
-        left: 5%;
-        color: red;
+        left: 3%;
+        top: 18%;
+        color: gold;
+        visibility: hidden;
+        font-family: 'Press Start 2P', cursive;
     }
     .titleCont{
 
@@ -45,17 +49,33 @@
         height: 210px;
         margin-left: 5%;
     }
+    #amountLives{
+        color: red;
+    }
     #start{
-        background-color: darkgray;
-        color: firebrick;
+        background-color: black;
         position: absolute;
         font-size: 13px;
-        top: 83.4%;
-        right: 37.5%;
-        width: 78px;
-        border-radius: 10%;
+        top: 90.5%;
+        right: 40.3%;
+        height: 10px;
+        width: 53px;
+        border-radius: 20%;
+        border: none;
+    }
+    #codeActivated{
+        color: gold;
+        font-size: 20px;
+        position: absolute;
+        top: 65%;
+        left: 23%;
+        visibility: hidden;
+        font-family: 'Press Start 2P', cursive;
     }
 </style>
+
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
 <body>
 <audio id="code">
     <source src="audio/code.mp3" type="audio/mp3">
@@ -69,7 +89,7 @@
     <img class="title"src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Castlevania_logo.png/1200px-Castlevania_logo.png" alt="">
 </div>
 <div id="Lives">
-    <p>Player Lives: 5</p>
+    <p>Player Lives: <span id="amountLives">05</span></p>
 </div>
 <div id="container">
     <img src="https://i.ytimg.com/vi/rTT_-pzXdW4/hqdefault.jpg" alt="Konami Game">
@@ -77,7 +97,10 @@
 <div class="bottom">
     <img src="https://sitejerk.com/images/nes-controller-transparent-3.png" alt="">
 </div>
-<button id="start">start</button>
+
+<p id="codeActivated">KONAMI CODE ACTIVATED</p>
+
+<button id="start"></button>
 <script type="text/javascript" src="js/jquery2.2.4.js"></script>
 <script type="text/javascript" src="js/konami.js"></script>
 </body>

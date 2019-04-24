@@ -6,6 +6,7 @@ $(document).keyup(function(event){
 });
 $('#start').click(function(){
     $('#container').html('<img src="https://thumbs.gfycat.com/SpitefulLoneBittern-small.gif" alt="Castlevania">');
+    $('#theme').trigger('play');
 });
 
 var code = 0;
@@ -48,5 +49,6 @@ $(document).keyup(function(event){
 function EasterEgg(a) {
     if (a === 11) {
         $('#Lives').html("<p>Player Lives: 35</p>").css("color", "green").css("font-size", "30px");
+        $("#code").trigger('play');
     }
 }

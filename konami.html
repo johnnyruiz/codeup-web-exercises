@@ -36,13 +36,11 @@
         font-family: 'Press Start 2P', cursive;
     }
     .titleCont{
-
         margin: 0;
         padding: 0;
     }
     .bottom{
         margin-top: 0;
-
     }
     .bottom img{
         width: 700px;
@@ -77,6 +75,7 @@
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
 <body>
+<!--Audio for start and code-->
 <audio id="code">
     <source src="audio/code.mp3" type="audio/mp3">
     Your browser does not support the audio element.
@@ -85,22 +84,32 @@
     <source src="audio/04%20(1).mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
+
 <div class="titleCont">
     <img class="title"src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Castlevania_logo.png/1200px-Castlevania_logo.png" alt="">
 </div>
+
+<!--span #amountLives text changes if code is entered-->
 <div id="Lives">
     <p>Player Lives: <span id="amountLives">05</span></p>
 </div>
+<!--Default img changes when start button is pressed-->
 <div id="container">
     <img src="https://i.ytimg.com/vi/rTT_-pzXdW4/hqdefault.jpg" alt="Konami Game">
 </div>
+
 <div class="bottom">
     <img src="https://sitejerk.com/images/nes-controller-transparent-3.png" alt="">
 </div>
 
+<!--hidden unless code is activated. if activated will fade out (5000)-->
 <p id="codeActivated">KONAMI CODE ACTIVATED</p>
 
+
+<!--TODO: add other controller buttons and make another function to activate code-->
+<!--start button is absolutely positioned on the controller image-->
 <button id="start"></button>
+
 <script type="text/javascript" src="js/jquery2.2.4.js"></script>
 <script type="text/javascript" src="js/konami.js"></script>
 </body>

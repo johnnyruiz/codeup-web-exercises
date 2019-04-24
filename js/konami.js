@@ -4,12 +4,12 @@
 $(document).keyup(function(event){
     console.log(event.key);
 });
+
 $('#start').click(function(){
     $('#container').html('<img src="https://thumbs.gfycat.com/SpitefulLoneBittern-small.gif" alt="Castlevania">');
     $('#theme').trigger('play');
     $('img').trigger('stop');
     $("#Lives").css('visibility', 'visible');
-
 });
 
 var code = 0;
@@ -49,11 +49,11 @@ $(document).keyup(function(event){
    EasterEgg(code);
    return code;
 });
+
 function EasterEgg(a) {
     if (a === 11) {
         $('#amountLives').text("35").css("color", "green");
         $("#code").trigger('play');
         $("#codeActivated").css('visibility', 'visible').fadeOut(5000);
-
     }
 }

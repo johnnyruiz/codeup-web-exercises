@@ -13,6 +13,22 @@
         .highlight{
             background-color: yellow;
         }
+        .frame{
+            height: 400px;
+            width: 230px;
+            border: solid red 5px;
+            background-size: cover;
+            display: inline-block;
+        }
+        .yellowstone{
+            background-image: url("https://i.stack.imgur.com/7YZhQ.gif");
+        }
+        .grandC{
+            background-image: url("https://thumbs.gfycat.com/EnormousKaleidoscopicCrayfish-size_restricted.gif");
+        }
+        .glacier{
+            background-image: url("https://media2.giphy.com/media/c4wqBsuh2LTWg/giphy.gif");
+        }
     </style>
 </head>
 <body>
@@ -52,6 +68,37 @@
 </dl>
 
 <button id="show">Show Answers</button>
+
+<h3>Yellowstone</h3>
+<ul>
+    <li>Yellowstone encompasses 3,472sq miles</li>
+    <li>There are more than 10,000 hydrothermal features in Yellowstone</li>
+    <li>Yellowstone is home to the largest concentration of mammals in the lower 48 states</li>
+</ul>
+<h3>Grand Canyon</h3>
+<ul>
+    <li>It's not the deepest canyon in the world</li>
+    <li>The Grand Canyon creates it's own weather</li>
+    <li>There are no dinosaur bones in the Grand Canyon</li>
+</ul>
+<h3>Glacier</h3>
+<ul>
+    <li>Glacier straddles the Continental Divide, allowing for extreme weather.</li>
+    <li>Human use in the are dates back over 12,000 years</li>
+    <li>The largest glacier in the park is 0.7sq miles</li>
+</ul>
+<button id="highlight">Highlight Facts!</button>
+<br>
+<div class="frame yellowstone">
+    <button id="YB">Swap!</button>
+</div>
+<div class="frame grandC">
+    <button id="GCB">Swap!</button>
+</div>
+<div class="frame glacier">
+    <button id="GB">Swap!</button>
+</div>
+
 
 <script type="text/javascript" src="js/jquery2.2.4.js"></script>
 <script type="text/javascript" src="js/jquery_faq.js"></script>

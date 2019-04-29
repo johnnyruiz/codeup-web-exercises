@@ -7,6 +7,14 @@
         h1{
             text-align: center;
         }
+        .newsLetter{
+            border: solid blue 1px;
+            background-color: #E6ECF0;
+            height: 200px;
+            width: 600px;
+            margin-left: 10%;
+            border-radius: 2%;
+        }
         .invisible{
             visibility: hidden;
         }
@@ -18,6 +26,7 @@
             width: 230px;
             border: solid red 5px;
             background-size: cover;
+            background-position: center;
             display: inline-block;
         }
         .yellowstone{
@@ -29,9 +38,51 @@
         .glacier{
             background-image: url("https://media2.giphy.com/media/c4wqBsuh2LTWg/giphy.gif");
         }
+        li{
+            display: none;
+        }
+        #register{
+            display: none;
+            text-align: center;
+        }
+        #Thanks{
+            display: none;
+            color: blue;
+        }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <strong>Hey!</strong> Check out our monthly newsletter.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div id="register" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register?</h5>
+                <button type="button" class="close exit" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Would you like to register?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary exit" data-dismiss="modal">Not now</button>
+                <button type="button" class="btn btn-primary exit thank">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="Thanks">Thank you for registering!</h1>
+
 <h1>FAQ</h1>
 <dl>
 
@@ -89,7 +140,8 @@
 </ul>
 <button id="highlight">Highlight Facts!</button>
 <br>
-<div class="frame yellowstone">
+
+<!--<div class="frame yellowstone">
     <button id="YB">Swap!</button>
 </div>
 <div class="frame grandC">
@@ -97,9 +149,10 @@
 </div>
 <div class="frame glacier">
     <button id="GB">Swap!</button>
-</div>
-
-
+</div>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/jquery2.2.4.js"></script>
 <script type="text/javascript" src="js/jquery_faq.js"></script>
 </body>

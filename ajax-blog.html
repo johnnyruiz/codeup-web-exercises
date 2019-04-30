@@ -50,6 +50,7 @@
         #blog{
             margin-bottom: 4%;
             border: solid darkblue 2px;
+            z-index: 100;
         }
         .jumbotron{
             background-image: url("https://learnopengl.com/img/in-practice/breakout/textures/background.jpg");
@@ -57,7 +58,7 @@
             color: white;
             border-bottom: solid darkblue 2px;
         }
-        .jumbotron img{
+        .logo{
             width: 25%;
             position: absolute;
             right: 9%;
@@ -72,11 +73,11 @@
     </style>
 </head>
 <body class="bg-dark">
+<img  class="logo shadow-lg" src="http://www.jemome.com/cdn/2010/12/cool-logo-with-transparent-background_2211301.png" alt="logo">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">My Blog</h1>
         <p class="lead">Welcome</p>
-        <img  class="shadow-lg" src="http://www.jemome.com/cdn/2010/12/cool-logo-with-transparent-background_2211301.png" alt="logo">
     </div>
 </div>
 <div class="container">

@@ -3,6 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        h1{
+            background-color: black;
+            color: white;
+            text-align: center;
+            text-decoration: underline white;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #post{
+            border: solid black 1px;
+        }
+        p{
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+        .content{
+            background-color: deepskyblue;
+            color: white;
+            margin-bottom: 0;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            margin-top: 0;
+        }
+        .subject{
+            font-size: 1.2em;
+            background-color: #848487;
+            color: white;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 1%;
+        }
+        .date{
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            font-size: 1.1em;
+            background-color: darkslategray;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1>Blog</h1>
@@ -19,10 +61,10 @@
 
                 data.forEach(function(data) {
                     html += '<div>';
-                    html += '<h1>' + data.title + '</h1>' + '<br>';
-                    html += '<p>' + 'Date: ' + data.date + '</p>' + '<br>';
-                    html += '<p>' + 'Subject: ' + data.categories + '</p>' + '<br>';
-                    html += '<p>' + data.content + '</p>' + '<br>';
+                    html += '<h1>' + data.title + '</h1>';
+                    html += '<p class="date">' + 'Date: ' + data.date + '</p>';
+                    html += '<p class="subject">' + 'Subject: ' + data.categories + '</p>';
+                    html += '<p class="content">' + data.content + '</p>';
                     html += '</div>';
                 });
                 return html;

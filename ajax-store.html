@@ -6,8 +6,8 @@
     <style>
 
         .blue{
-            color: lightgray;
-            text-decoration: underline lightgray;
+            color: white;
+            text-decoration: underline white;
             transition: ease 1s;
             font-size: 1.1em;
         }
@@ -27,12 +27,15 @@
         li a:hover{
             background-color: black;
             color: white;
-            transition: ease 1s;
+            transition: ease 2s;
             border-radius: 10%;
-            text-decoration: underline white;
         }
         .jumbotron{
             background-image: url("https://st3.depositphotos.com/3227011/12588/i/950/depositphotos_125883066-stock-photo-many-tools-on-wooden-table.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-top: solid white 3px;
+            border-bottom: solid white 3px;
         }
         .underline{
             text-decoration: underline;
@@ -46,10 +49,13 @@
         .slide{
             display: none;
         }
+        #footer{
+            border-top: solid white 3px;
+        }
     </style>
 </head>
 <body class="bg-secondary">
-<ul class="nav fill bg-dark py-3">
+<ul class="nav fill bg-dark py-3 ">
     <li class="locationFinder">
         <div class="input-group mr-5 pl-4">
             <div class="input-group-prepend">
@@ -74,8 +80,8 @@
 
 <div class="jumbotron jumbotron-fluid mb-0 text-dark">
     <div class="container">
-        <h1 class="display-4 text-dark">My Store Name</h1>
-        <p class="lead">Welcome</p>
+        <h1 class="display-4 text-white">Jordan's Hardware</h1>
+        <p class="lead text-white">Welcome</p>
     </div>
 </div>
 
@@ -91,7 +97,7 @@
     <tbody id="insertProducts">
     </tbody>
 </table>
-<div class="row bg-secondary mt-0 p-3 h-auto">
+<div id="footer" class="row bg-secondary mt-0 p-3 h-auto">
     <div class="col-5 text-light ml-4">
         <div id="left" class="footerInfo row font-weight-bold">About Us</div>
         <div class="footerInfo left row slide">Contact</div>

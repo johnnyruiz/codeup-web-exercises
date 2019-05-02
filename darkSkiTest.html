@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Ski API</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #map{
+            width: 100%;
+            height: 50vh;
+            margin-top: 2%;
+            border: solid #1969B2 2px;
+        }
+        #weatherCards{
+            font-size: 1.3rem;
+        }
+        .date{
+            font-size: 1.1rem;
+            font-weight: bolder;
+        }
+        .mapCont{
+            width: 61.8%;
+            float: right;
+            display: inline-block;
+        }
+        .userInteraction{
+            width: 38.2%;
+            height: 64vh;
+            display: inline-block;
+        }
+        #cardsCont{
+            background-color: #1969B2;
+        }
+        nav{
+
+        }
+        #card{
+            height: 100%;
+        }
+        .weatherIcons{
+            height: 20%;
+            width: 20%;
+            float: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+        <a id="navLocation" class="navbar-brand mx-auto" href="#">San Antonio</a>
+        <a class="navbar-brand mx-auto" href="#">Your Three Day Forecast</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Social Media</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--below is the container with targeted element for weather cards-->
+    <div id="cardsCont" class="py-3">
+        <div class="mx-4">
+            <div id="weatherCards" class="row">
+            </div>
+        </div>
+    </div>
+    <!--below is the targeted element for the map-->
+    <div class="mx-2 mt-3">
+        <div class="userInteraction">
+            <h5 class="text-center">Go to another location?</h5>
+            <p class="text-center mt-5">Just enter the...</p>
+            <ul>
+                <li>Coordinates</li>
+                <li>Name of the location</li>
+                <li>Zip Code</li>
+                <li>Address</li>
+                <li>Name of place</li>
+            </ul>
+            <p class="text-center">and click <span class="badge badge-secondary">GO!</span> for updated<br>forecast and map</p>
+            <div class="input-group mb-3">
+                <input id="userAdd" type="text" class="form-control" placeholder="enter location here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <button type="button" id="uInput" class="btn btn-primary btn-block">GO!</button>
+        </div>
+        <div class="mapCont">
+            <h5 id="location" class="text-center">San Antonio, TX</h5>
+            <div id="map">
+            </div>
+        </div>
+    </div>
+
+    <img src="img/clear-day.png" alt="">
+
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="js/keys.js"></script>
+    <script type="text/javascript" src="js/jquery2.2.4.js"></script>
+    <script>
+        "use strict";
+        var darkSkiUrl = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/';
+        var darkSkiApiKey = darkSkyKey;
+        var lat = 29.4241;
+        var lng = -98.4936;
+        var changeLocation = document.getElementById('location');
+
+
+        function dailyForecast(data) {
+            var html = '';
+            console.log(data);
+            data.forEach(function(day) {
+                //only displays the first three items in the array of 4
+                data.length = 3;
+                //converts time
+                //var Time = new Date(day.time).toDateString();
+                //creates the inner html of the weather cards
+                    html += '<div class="col-4">';
+                        html += '<div id="card" class="card">';
+                            html += '<div class="card-body">';
+                                html += '<p class="date">' + (new Date(day.time * 1000).toDateString().slice(0,10)) + '</p>';
+                                html += '<img class="weatherIcons"' + ' ' + 'src="' + 'img/' + day.icon + '.png' + '"' + 'alt=""' + '>';
+                                html += '<p>'+ day.summary + '</p>';
+                                html += '<p class="text-center badge badge-danger">' + 'High: ' + day.temperatureHigh + '&#8457;' + '</p>';
+                                html += '<p class="text-center badge badge-primary">' + 'Low: ' + day.temperatureLow + '&#8457;' + '</p>';
+                            html += '</div>';
+                        html += '</div>';
+                    html += '</div>';
+            });
+            return html;
+        }
+        $.get(darkSkiUrl + darkSkiApiKey + "/" + lat + "," + lng).done(function(data){
+            $('#weatherCards').html(dailyForecast(data.daily.data));
+        }).fail(function(){
+            console.log("ERROR!");
+        });
+
+        mapboxgl.accessToken = mapboxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [-98.4916, 29.4252],
+            zoom: 11,
+        });
+
+        var GO = document.getElementById('uInput');
+        GO.addEventListener('click' ,function (event) {
+            geocode(userAdd.value,mapboxKey).then(function (result) {
+                changeLocation.innerText = userAdd.value;
+                $('#navLocation').text(userAdd.value);
+                map.setCenter(result);
+                map.setZoom(13);
+                var newLocation = (result[1] + ',' + result[0]);
+                console.log(result[1] + ',' + result[0]);
+                $.get(darkSkiUrl + darkSkiApiKey + "/" + newLocation).done(function(data){
+                    $('#weatherCards').html(dailyForecast(data.daily.data));
+                }).fail(function(){
+                    console.log("ERROR!");
+                });
+            });
+        }, false);
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+//"clear-day",
+//"clear-night",
+//"partly-cloudy-day",
+//"partly-cloudy-night",
+//"cloudy",
+//"rain",
+//"sleet",
+//"snow",
+//"wind",
+//"fog"

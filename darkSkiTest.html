@@ -10,14 +10,16 @@
         #map{
             width: 100%;
             height: 50vh;
-            margin-top: 2%;
-            border: solid #1969B2 2px;
+            margin-top: 0;
+            border-right: solid lightgrey 3px;
+            border-left: solid lightgrey 3px;
+
         }
         #weatherCards{
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
         .date{
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: bolder;
         }
         .mapCont{
@@ -26,29 +28,77 @@
             display: inline-block;
         }
         .userInteraction{
-            width: 38.2%;
-            height: 64vh;
+            width: 36.2%;
+            height: 53vh;
             display: inline-block;
+            background-color: darkslategray;
+            margin-right: 1%;
+            margin-bottom: 3%;
+            border: solid lightgrey 3px;
+            padding-top: 2%;
+            color: white;
         }
         #cardsCont{
             background-color: #1969B2;
+            border-bottom: solid lightgrey 2px;
         }
         nav{
-
+            border-bottom: solid lightgrey 2px;
         }
         #card{
             height: 100%;
         }
         .weatherIcons{
-            height: 20%;
-            width: 20%;
-            float: center;
+            margin-top: 0;
+            margin-left: 30%;
+            height: 40%;
+            width: 40%;
+        }
+        #imgCont{
+            border-top: solid 3px #1969B2;
+            border-bottom: solid 3px #1969B2;
+            margin-bottom: 3%;
+        }
+        .card-body{
+            background-color: white;
+        }
+        .summary{
+            border: solid 3px #1969B2;
+            height: 35%;
+            background-color: darkslategray;
+            color: white;
+            border-radius: 4%;
+        }
+        .summary p{
+            padding: 3%;
+        }
+        .mapHeader{
+            margin-bottom: 0;
+            background-color: darkslategray;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            color: white;
+            border: solid lightgrey 2px;
+        }
+        .transparent{
+            position: absolute;
+            height: 101%;
+            top: .4%;
+            right: -1%;
+            width: 103%;
+            background-color: lightgrey;
+            z-index: 1000;
+            opacity: 0.5;
+        }
+        .transparent:hover{
+            opacity: 0.1;
+            transition: ease 1s;
         }
     </style>
 </head>
-<body>
+<body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
         <a id="navLocation" class="navbar-brand mx-auto" href="#">San Antonio</a>
         <a class="navbar-brand mx-auto" href="#">Your Three Day Forecast</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,10 +129,10 @@
         </div>
     </div>
     <!--below is the targeted element for the map-->
-    <div class="mx-2 mt-3">
+    <div class="bottom mx-2 mt-3">
         <div class="userInteraction">
             <h5 class="text-center">Go to another location?</h5>
-            <p class="text-center mt-5">Just enter the...</p>
+            <p class="text-center">Just enter the...</p>
             <ul>
                 <li>Coordinates</li>
                 <li>Name of the location</li>
@@ -92,18 +142,17 @@
             </ul>
             <p class="text-center">and click <span class="badge badge-secondary">GO!</span> for updated<br>forecast and map</p>
             <div class="input-group mb-3">
-                <input id="userAdd" type="text" class="form-control" placeholder="enter location here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input id="userAdd" type="text" class="form-control mb-0" placeholder="Enter location here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-            <button type="button" id="uInput" class="btn btn-primary btn-block">GO!</button>
+            <button type="button" id="uInput" class="btn btn-danger btn-block mb-2 mt-0">GO!</button>
         </div>
         <div class="mapCont">
-            <h5 id="location" class="text-center">San Antonio, TX</h5>
+            <h5 id="location" class="text-center mapHeader">San Antonio, TX</h5>
             <div id="map">
             </div>
         </div>
     </div>
 
-    <img src="img/clear-day.png" alt="">
 
     <script src="js/mapbox-geocoder-utils.js"></script>
     <script src="js/keys.js"></script>
@@ -129,12 +178,13 @@
                     html += '<div class="col-4">';
                         html += '<div id="card" class="card">';
                             html += '<div class="card-body">';
-                                html += '<p class="date">' + (new Date(day.time * 1000).toDateString().slice(0,10)) + '</p>';
-                                html += '<img class="weatherIcons"' + ' ' + 'src="' + 'img/' + day.icon + '.png' + '"' + 'alt=""' + '>';
-                                html += '<p>'+ day.summary + '</p>';
-                                html += '<p class="text-center badge badge-danger">' + 'High: ' + day.temperatureHigh + '&#8457;' + '</p>';
-                                html += '<p class="text-center badge badge-primary">' + 'Low: ' + day.temperatureLow + '&#8457;' + '</p>';
-                            html += '</div>';
+                                    html += '<div class="transparent"></div>';
+                                    html += '<p class="date">' + (new Date(day.time * 1000).toDateString().slice(0,10)) + '</p>';
+                                    html += '<div id="imgCont">' + '<img class="weatherIcons"' + ' ' + 'src="' + 'img/' + day.icon + '.png' + '"' + 'alt="' + day.icon + '"' +'>' + '</div>';
+                                    html += '<p class="text-center badge badge-danger ml-4 mt-1 shadow">' + 'High: ' + day.temperatureHigh + '&#8457;' + '</p>';
+                                    html += '<p class="text-center badge badge-primary ml-4 mt-1 shadow">' + 'Low: ' + day.temperatureLow + '&#8457;' + '</p>';
+                                    html += '<div class="summary shadow shadow-lg">' + '<p>' + day.summary + '</p>' + '</div>';
+                             html += '</div>';
                         html += '</div>';
                     html += '</div>';
             });
@@ -171,22 +221,8 @@
             });
         }, false);
 
-
-
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-//"clear-day",
-//"clear-night",
-//"partly-cloudy-day",
-//"partly-cloudy-night",
-//"cloudy",
-//"rain",
-//"sleet",
-//"snow",
-//"wind",
-//"fog"

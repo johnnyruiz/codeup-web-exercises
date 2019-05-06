@@ -16,8 +16,8 @@
 
         }
         #weatherCards{
-            font-size: 1.1rem;
-        }
+             font-size: 1.1rem;
+         }
         .date{
             font-size: 1.3rem;
             font-weight: bolder;
@@ -45,7 +45,7 @@
         nav{
             border-bottom: solid lightgrey 2px;
         }
-        #card{
+        .card{
             height: 100%;
         }
         .weatherIcons{
@@ -61,6 +61,11 @@
         }
         .card-body{
             background-color: white;
+            opacity: 0.6;
+        }
+        .card-body:hover{
+            background-color: white;
+            opacity: 1;
         }
         .summary{
             border: solid 3px #1969B2;
@@ -80,20 +85,7 @@
             color: white;
             border: solid lightgrey 2px;
         }
-        .transparent{
-            position: absolute;
-            height: 101%;
-            top: .4%;
-            right: -1%;
-            width: 103%;
-            background-color: lightgrey;
-            z-index: 1000;
-            opacity: 0.5;
-        }
-        .transparent:hover{
-            opacity: 0.1;
-            transition: ease 1s;
-        }
+
     </style>
 </head>
 <body class="bg-light">
@@ -176,9 +168,8 @@
                 //var Time = new Date(day.time).toDateString();
                 //creates the inner html of the weather cards
                     html += '<div class="col-4">';
-                        html += '<div id="card" class="card">';
+                        html += '<div class="card">';
                             html += '<div class="card-body">';
-                                    html += '<div class="transparent"></div>';
                                     html += '<p class="date">' + (new Date(day.time * 1000).toDateString().slice(0,10)) + '</p>';
                                     html += '<div id="imgCont">' + '<img class="weatherIcons"' + ' ' + 'src="' + 'img/' + day.icon + '.png' + '"' + 'alt="' + day.icon + '"' +'>' + '</div>';
                                     html += '<p class="text-center badge badge-danger ml-4 mt-1 shadow">' + 'High: ' + day.temperatureHigh + '&#8457;' + '</p>';
@@ -220,6 +211,7 @@
                 });
             });
         }, false);
+
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

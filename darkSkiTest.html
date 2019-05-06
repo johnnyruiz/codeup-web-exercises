@@ -61,10 +61,11 @@
         }
         .card-body{
             background-color: white;
-            opacity: 0.6;
+            opacity: 0.4;
         }
         .card-body:hover{
             background-color: white;
+            transition: ease 1s;
             opacity: 1;
         }
         .summary{
@@ -85,7 +86,6 @@
             color: white;
             border: solid lightgrey 2px;
         }
-
     </style>
 </head>
 <body class="bg-light">
@@ -162,14 +162,13 @@
             var html = '';
             console.log(data);
             data.forEach(function(day) {
-                //only displays the first three items in the array of 4
+                //only displays the first three items in the array of 8
                 data.length = 3;
                 //converts time
-                //var Time = new Date(day.time).toDateString();
                 //creates the inner html of the weather cards
                     html += '<div class="col-4">';
                         html += '<div class="card">';
-                            html += '<div class="card-body">';
+                            html += '<div class="card-body shadow">';
                                     html += '<p class="date">' + (new Date(day.time * 1000).toDateString().slice(0,10)) + '</p>';
                                     html += '<div id="imgCont">' + '<img class="weatherIcons"' + ' ' + 'src="' + 'img/' + day.icon + '.png' + '"' + 'alt="' + day.icon + '"' +'>' + '</div>';
                                     html += '<p class="text-center badge badge-danger ml-4 mt-1 shadow">' + 'High: ' + day.temperatureHigh + '&#8457;' + '</p>';
@@ -181,6 +180,7 @@
             });
             return html;
         }
+
         $.get(darkSkiUrl + darkSkiApiKey + "/" + lat + "," + lng).done(function(data){
             $('#weatherCards').html(dailyForecast(data.daily.data));
         }).fail(function(){
@@ -191,7 +191,7 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
-            center: [-98.4916, 29.4252],
+            center: [lng, lat],
             zoom: 11,
         });
 
@@ -201,9 +201,8 @@
                 changeLocation.innerText = userAdd.value;
                 $('#navLocation').text(userAdd.value);
                 map.setCenter(result);
-                map.setZoom(13);
+                map.setZoom(10);
                 var newLocation = (result[1] + ',' + result[0]);
-                console.log(result[1] + ',' + result[0]);
                 $.get(darkSkiUrl + darkSkiApiKey + "/" + newLocation).done(function(data){
                     $('#weatherCards').html(dailyForecast(data.daily.data));
                 }).fail(function(){

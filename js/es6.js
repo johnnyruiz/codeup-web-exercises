@@ -33,9 +33,9 @@ const users = [
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-var name = 'johnny';
-var email = 'ruiz.johnny.p@gmail.com';
-var languages = ['html', 'css', 'javascript'];
+const name = 'johnny';
+const email = 'ruiz.johnny.p@gmail.com';
+const languages = ['html', 'css', 'javascript'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
@@ -71,7 +71,7 @@ users.forEach(function(user) {
 });
 
 // TODO: Use `let` for the following variable
-var list = '<ul>';
+let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
 developers.forEach(function (developer) {

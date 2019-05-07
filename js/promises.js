@@ -15,33 +15,28 @@
     // });
 
 
-    const wait = (num) => {
-        return new Promise((resolve,reject) => {
-            setTimeout(() => {
-                if(typeof(num) == "number"){
-                    resolve();
-                } else {
-                    reject();
-                }
-            }, (1000 * num));
-        }).then(() => {
-            console.log('You\'ll see this after ' + num + ' seconds');
-        }).catch(() => {
-            console.log( num + ' is not a number')
-        });
-    };
-//Test
-    wait(3);
-    wait(5);
-    wait(7);
-    wait('banana');
-    wait(false);
-    wait(true);
-
-
-
-
-
+//     const wait = (num) => {
+//         return new Promise((resolve,reject) => {
+//             setTimeout(() => {
+//                 if(typeof(num) == "number"){
+//                     resolve();
+//                 } else {
+//                     reject();
+//                 }
+//             }, (1000 * num));
+//         }).then(() => {
+//             console.log('You\'ll see this after ' + num + ' seconds');
+//         }).catch(() => {
+//             console.log( num + ' is not a number')
+//         });
+//     };
+// //Test
+//     wait(3);
+//     wait(5);
+//     wait(7);
+//     wait('banana');
+//     wait(false);
+//     wait(true);
 
 
 // exp of basic promise creation
@@ -61,3 +56,6 @@
     // }).catch((data) => {
     //     console.log(data)
     // });
+
+// ================ Fetch API GET example
+

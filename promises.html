@@ -7,6 +7,20 @@
 <body>
 
 <script src="js/promises.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    let lastCommit = (userName) => {
+        fetch('https://api.github.com/users/' + userName + '/events', {headers: {'Authorization': gitHubKey}})
+            .then((data) => data.json())
+            .then((events) => events.find(event => event.type === 'PushEvent'))
+            .then(data => {
+                let fullDate = data.created_at.slice(0, 10);
+                console.log(fullDate);
+                return fullDate;
+            });
+    };
+    lastCommit('johnnyruiz');
+</script>
 </body>
 
 </html>
